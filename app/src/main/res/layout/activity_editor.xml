@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--编辑宠物信息布局 -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".EditorActivity">
+
+    <!-- 名字、血统编辑 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 标签 -->
+        <TextView
+            android:text="@string/category_overview"
+            style="@style/CategoryStyle" />
+
+        <!-- 输入区 -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+
+            <!-- 名字编辑 -->
+            <EditText
+                android:id="@+id/edit_pet_name"
+                android:hint="@string/hint_pet_name"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+
+            <!-- 血统编辑-->
+            <EditText
+                android:id="@+id/edit_pet_breed"
+                android:hint="@string/hint_pet_breed"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 性别选择 -->
+    <LinearLayout
+        android:id="@+id/container_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 标签 -->
+        <TextView
+            android:text="@string/category_gender"
+            style="@style/CategoryStyle" />
+
+        <!-- 输入区 -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <!-- 下拉控件选择性别 -->
+            <!--列表显示的模式，有两个选择，为弹出列表（dialog）以及下拉列表（dropdown），如果不特别设置，为下拉列表。-->
+            <Spinner
+                android:id="@+id/spinner_gender"
+                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:paddingRight="16dp"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 重量编辑 -->
+    <LinearLayout
+        android:id="@+id/container_measurement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 标签 -->
+        <TextView
+            android:text="@string/category_measurement"
+            style="@style/CategoryStyle" />
+
+        <!-- 输入区 -->
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- 输入重量 -->
+            <EditText
+                android:id="@+id/edit_pet_weight"
+                android:hint="@string/hint_pet_weight"
+                android:inputType="number"
+                style="@style/EditorFieldStyle" />
+
+            <!-- 重量单位 -->
+            <TextView
+                android:id="@+id/label_weight_units"
+                android:text="@string/unit_pet_weight"
+                style="@style/EditorUnitsStyle"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
